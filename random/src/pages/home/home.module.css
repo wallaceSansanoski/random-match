@@ -1,0 +1,38 @@
+.wrapperContainerHome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerFields {
+    width: 500px;
+    height: 400px;
+    display: flex;
+    position: relative;
+    justify-content: start;
+    align-items: center;
+   /* overflow: hidden; */
+}
+
+.containerFields > img {
+    width: 100%;
+    height: 100%;  
+    position: absolute;
+}
+.wrapperOption{
+    margin: 30px;
+}
+
+.iconLeft {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+}
+.iconRight {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+}
