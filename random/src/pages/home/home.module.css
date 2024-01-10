@@ -1,10 +1,17 @@
 .wrapperContainerHome {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+.wrapperContainerHomeOpstions {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 }
-
 .containerFields {
     width: 500px;
     height: 400px;
@@ -12,27 +19,26 @@
     position: relative;
     justify-content: start;
     align-items: center;
-   /* overflow: hidden; */
 }
 
 .containerFields > img {
     width: 100%;
-    height: 100%;  
-    position: absolute;
-}
-.wrapperOption{
-    margin: 30px;
+    height: 100%; 
 }
 
-.iconLeft {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    left: 0;
-}
-.iconRight {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    right: 0;
+
+@media(max-width : 420px) {
+    .containerFields {
+        width: 350px;
+        height: 300px;
+        display: flex;
+        position: relative;
+        justify-content: start;
+        align-items: center;
+        /* transform: rotate(90deg); */
+    }
+    .containerFields > img {
+        width: 100%;
+        height: 100%; 
+    }
 }

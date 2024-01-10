@@ -1,21 +1,23 @@
 import style from "../player/player.module.css"
 import { useEffect, useRef, useState } from "react";
 
-const Player = ({prop}) => {
+const Player = ({player}) => {
 
-    const [ position, setPosition ] = useState(prop)
-
-    const  player = useRef()
-
+    const [ counter , setCounter ] = useState(0)
 
     return (
         <div
-            ref={player}
             className={style.wrapperPlayer}
-            style={{ position: 'absolute', left: prop.x, top: prop.y }}>
-                <div className={style.playerImage}>
-                  </div>
-                <p>Name Player</p>
+        >
+            <p className={style.namePlayer}>{player}</p>
+            <button className={style.btn} onClick={() => setCounter(counter => counter += 1)}>+</button>
+            <span className={style.score}><strong>{counter}</strong></span>
+            <button 
+            className={style.btn} 
+            onClick={() => setCounter(counter => counter -= 1)}
+            style={{opacity : counter < 1 ? .8 : 1}}
+            disabled={counter < 1 ? true : false}
+            >-</button>
         </div>
     )
 }

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import Field from './components/field/field'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'

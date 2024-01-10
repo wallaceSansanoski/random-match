@@ -1,14 +1,22 @@
-.wrapperPlayer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-}
-
-.playerImage {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 2px solid black;
+@media(max-width : 420px) {
+    .wrapperPlayer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 150px;
+    }
+    
+    .namePlayer {
+        width: 60%;
+        text-align: start;
+        font-size: 20px;
+    }
+    
+    .btn {
+        flex-grow: 1;
+    }
+    .score {
+        font-size: 20px;
+        margin: 0 5px;
+    }
 }

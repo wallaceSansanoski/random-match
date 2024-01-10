@@ -19,9 +19,9 @@ const Home = () => {
     const { setKindActivity, kindActivity} = useContext(ContextActivity)
 
     return (
-        <div>
+        <div className={style.wrapperContainerHome}>
             <h1>Random Players</h1>
-            <div className={style.wrapperContainerHome}>
+            <div className={style.wrapperContainerHomeOpstions} >
                 <div className={style.wrapperOption}>
                 <h2>Qual atividade voce vai escolher : </h2>
                     <select onChange={e => setKindActivity(e.target.value)}>
@@ -35,7 +35,7 @@ const Home = () => {
                     </select>
                 </div>
                 <div className={style.containerFields}>
-                    <img ref={soccerImage} src={field} alt=""  style={{display : kindActivity === 'Futebol society' || 'Futebol de salão' || 'Futebol de campo' ? 'block' : 'none'}}/>
+                    <img ref={soccerImage} src={field} alt=""  style={{display : kindActivity ===  'Futebol de campo' ? 'block' : 'none'}}/>
                     <img ref={volleyballImage} src={volleyball} alt="" style={{display : kindActivity === 'Volleyball' ? 'block' : 'none'}} />
                     <img ref={quadraSalao} src={quadra} alt="" style={{display : kindActivity === 'Futebol de salão' ? 'block' : 'none'}} />
                     <img ref={basket} src={basketball} alt="" style={{display : kindActivity === 'Basketball' ? 'block' : 'none'}} />

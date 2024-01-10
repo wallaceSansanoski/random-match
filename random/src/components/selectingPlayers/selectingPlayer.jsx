@@ -1,10 +1,13 @@
 import { useContext, useState} from "react";
 import { ContextActivity } from "../../Context/contextActivit";
 import { Link } from "react-router-dom";
+import { ContextPlayers } from "../../Context/contextPlayers";
 
 const  SelectingPlayers = () => {
 
     const { kindActivity } = useContext(ContextActivity)
+    const { setPlayers } = useContext(ContextPlayers)
+
     const  [ listOfPlayers, setListOfPlayers ]  = useState([])
     const  [ singlePLayer, setSinglePlayer ]  = useState()
 
@@ -15,14 +18,13 @@ const  SelectingPlayers = () => {
         'Basketball': 5
     }
 
-    let quantatyInput = new Array(quantatyPlayer[kindActivity] * 2).fill('player')
+    let quantatyInput = new Array(quantatyPlayer[kindActivity] ).fill('player')///  * 2
 
     const handleInserPLayer = (e) => {
         e.preventDefault()
         setListOfPlayers(prevPlayer => [...prevPlayer, singlePLayer])
     }
 
-    console.log(listOfPlayers, singlePLayer)
     
     function shuffle() {
 
@@ -37,9 +39,7 @@ const  SelectingPlayers = () => {
     }
     
     const shuffleArray = () => {
-
-       const value =  shuffle(listOfPlayers.length)
-        console.log(value)
+        setPlayers(shuffle(listOfPlayers.length))
     }
     
     return (
