@@ -1,4 +1,21 @@
 
 body,  #root{
     height: 100vh;
+    background-color: whitesmoke;
+}
+
+.positionInField{
+    min-width: 100%;
+    min-height: 10px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+} 
+.positionInField > div {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: aliceblue;
 }

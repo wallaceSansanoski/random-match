@@ -1,0 +1,51 @@
+.wrapperPage {
+    text-align: center;
+    padding: 20px;
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.description {
+    font-size: 20px;
+}
+
+.btn {
+    width: 100px;
+    height: 40px;
+    justify-content: center;
+    background-color: white;
+}
+.savePlayerBtn {
+    width: 70px;
+    height: 30px;
+    justify-content: center;
+    background-color: white;
+}
+
+.inputPlayer, label {
+    flex-grow: 1;
+    height: 30px;
+    font-size: 15px;
+}
+
+.singlePLayerInList{
+    display: flex;
+    flex-direction: row;
+    width: 135px;
+}
+.wrapperPlayerList {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.namePlayer {
+    flex-grow: 1;
+    list-style: none;
+}
+
+.removePlayerBtn{
+ width: 40px;
+}
