@@ -22,7 +22,7 @@ const FieldImage = () => {
 
     return (
         <div className={style.field}>
-            <img className={style.fieldImage} src={fieldInformation[kindActivity]} />
+            <img className={style.fieldImage} src={fieldInformation[kindActivity]} alt="image field sport"/>
         </div>
     )
 }

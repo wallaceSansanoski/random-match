@@ -1,11 +1,12 @@
 .wrapperPage {
     text-align: center;
-    padding: 20px;
-    height: 100%;
+    padding: 10px;
+    height: 100vh;
     justify-content: center;
     display: flex;
     flex-direction: column;
     gap: 50px;
+    position: relative;
 }
 
 .description {
@@ -48,4 +49,10 @@
 
 .removePlayerBtn{
  width: 40px;
+}
+
+.backBtn {
+    position: absolute;
+    left: 10px;
+    top: 10px;
 }

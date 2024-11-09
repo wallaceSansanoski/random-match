@@ -4,7 +4,7 @@ export const ContextActivity = createContext()
 
 export const ContextActivityProvider = ({children}) => {
 
-    const [ kindActivity, setKindActivity ] = useState('Futebol de campo')
+    const [ kindActivity, setKindActivity ] = useState('Basketball')
     return (
         <ContextActivity.Provider value={{setKindActivity, kindActivity}}>{children}</ContextActivity.Provider>
     )

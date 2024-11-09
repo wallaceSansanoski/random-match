@@ -1,5 +1,5 @@
 import style from "../player/player.module.css"
-import { useEffect, useRef, useState } from "react";
+import {  useState } from "react";
 
 const Player = ({player}) => {
 
@@ -12,11 +12,11 @@ const Player = ({player}) => {
             <p className={style.namePlayer}>{player}</p>
             <button className={style.btn} onClick={() => setCounter(counter => counter += 1)}>+</button>
             <span className={style.score}><strong>{counter}</strong></span>
-            <button 
-            className={style.btn} 
-            onClick={() => setCounter(counter => counter -= 1)}
-            style={{opacity : counter < 1 ? .8 : 1}}
-            disabled={counter < 1 ? true : false}
+            <button
+                className={style.btn}
+                onClick={() => setCounter(counter => counter -= 1)}
+                style={{ opacity: counter < 1 ? .8 : 1 }}
+                disabled={counter < 1 ? true : false}
             >-</button>
         </div>
     )

@@ -1,24 +1,38 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ContextActivity } from "../../Context/contextActivit";
 import { Link } from "react-router-dom";
 import { ContextPlayers } from "../../Context/contextPlayers";
 import style from '../selectingPlayers/selectingPlayer.module.css'
+import { ContextNameTeam } from "../../Context/ContextNameTeam";
 
 const SelectingPlayers = () => {
 
     const { kindActivity } = useContext(ContextActivity)
     const { setPlayers } = useContext(ContextPlayers)
+    const { teamNames ,setTeamNames } = useContext(ContextNameTeam)
 
     const [listOfPlayers, setListOfPlayers] = useState([])
-    const [singlePLayer, setSinglePlayer] = useState()
+    const [singlePLayer, setSinglePlayer] = useState('')
+
+    console.log(singlePLayer)
 
     const quantatyPlayer = {
         'Futebol de campo': 22,
         'Futebol de salão': 12,
+        'Futebol society' : 12,
         'Volleyball': 12,
         'Basketball': 10
     }
+
     const isListOfPLayersFull = listOfPlayers.length === quantatyPlayer[kindActivity] ? true : false
+
+    const handleSetNameTeam = (e) => {
+        e.preventDefault()
+        const valueInput = e.target.input.value
+        setTeamNames(prevNameTeam => [...prevNameTeam,valueInput])
+        
+        e.target.input.value = ''
+    }
 
     const handleSubmitSaveplayer = e => {
         e.preventDefault()
@@ -48,13 +62,36 @@ const SelectingPlayers = () => {
         setPlayers(shuffle(listOfPlayers.length))
     }
 
+    useEffect(() => {
+        setTeamNames([])
+    },[])
+
     return (
         <div className={style.wrapperPage}>
+             <Link to={'/'}><button className={style.backBtn}>Voltar</button></Link>
             <div>
                 <p className={style.description}>Você selecionou a atividade de <strong>{kindActivity}</strong>, lembre - se : </p>
-                <p className={style.description}>Em partidas oficiais serão duas equipes composta de {quantatyPlayer[kindActivity]} jogadores.</p>
+                <p className={style.description}>Em partidas oficiais serão duas equipes composta de {quantatyPlayer[kindActivity]/2} jogadores cada.</p>
             </div>
             <div>
+                <form onSubmit={handleSetNameTeam}>
+                    <label>
+                        <input
+                            className={style.inputPlayer}
+                            name="input"
+                            required
+                            autoFocus
+                            type="text"
+                            placeholder={`Digite o nome do ${teamNames.length === 0 ? 'primeiro' : 'segundo'} time`}
+                        ></input>
+                    </label>
+                    <button
+                    className={style.savePlayerBtn}
+                        disabled={teamNames.length === 2 ? true : false}
+                        type="submit"
+                    >Salvar</button>
+                </form>
+
                 <form onSubmit={handleSubmitSaveplayer}>
                     <label>
                         <input

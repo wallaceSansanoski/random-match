@@ -1,4 +1,4 @@
-@media(max-width : 420px) {
+@media  screen and (max-width : 431px) {
     .wrapperPlayer {
         display: flex;
         flex-direction: row;
@@ -9,14 +9,14 @@
     .namePlayer {
         width: 60%;
         text-align: start;
-        font-size: 20px;
+        font-size: 12px;
     }
     
     .btn {
         flex-grow: 1;
     }
     .score {
-        font-size: 20px;
+        font-size: 12px;
         margin: 0 5px;
     }
 }
